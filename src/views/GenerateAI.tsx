@@ -3,6 +3,7 @@ import { useAppStore } from "../store/useAppStore";
 const GenerateAI = () => {
     const showNotification = useAppStore(state => state.showNotification);
     const generateRecipe = useAppStore(state => state.generateRecipe);
+    const recipe = useAppStore(state => state.recipe);
 
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
@@ -53,7 +54,7 @@ const GenerateAI = () => {
                 </form>
 
                 <div className="py-10 whitespace-pre-wrap">
-
+                    {recipe}
                 </div>
             </div>
         </>
